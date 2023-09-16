@@ -1,5 +1,4 @@
 {% set version = "1.2" %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -24,19 +23,18 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
-
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
+    - r-dplyr
     - r-httr
-    - r-magrittr
     - r-memoise
     - r-rvest
     - r-shiny
-
   run:
     - r-base
+    - r-dplyr
     - r-httr
-    - r-magrittr
     - r-memoise
     - r-rvest
     - r-shiny
@@ -60,7 +58,6 @@ extra:
     - thewchan
 
 # The original CRAN metadata for this package was:
-
 # Package: snotelr
 # Title: Calculate and Visualize 'SNOTEL' Snow Data and Seasonality
 # Version: 1.1
@@ -82,7 +79,6 @@ extra:
 # Maintainer: Koen Hufkens <koen.hufkens@gmail.com>
 # Repository: CRAN
 # Date/Publication: 2022-08-20 21:50:02 UTC
-
 # See
 # https://docs.conda.io/projects/conda-build for
 # more information about meta.yaml
