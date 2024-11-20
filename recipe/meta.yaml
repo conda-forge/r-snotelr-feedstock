@@ -1,4 +1,4 @@
-{% set version = "1.5.1" %}
+{% set version = "1.5.2" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/snotelr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/snotelr/snotelr_{{ version }}.tar.gz
-  sha256: ea49938d9ae04c1feccd1178d5a333d0632cfaf090154fb49563c3de95cde2a4
+  sha256: 34dbf71336ae1ee3aca6e2215f0b45a46fd9e324c57dcbd83f3fc4ae063ff30d
 
 build:
   number: 0
